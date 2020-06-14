@@ -54,6 +54,14 @@ Limit / Offset: Indien opgegeven worden enkel de rijen getoond die je hebt opgeg
 ***Praktijk***: Gegeven db met tabellen bank, in_uitgave, eigenaar, type....
 
 1 a. Schrijf een script die een nieuw kol (bedrag en teken) aanmaakt aan [table](https://examenwiki.diana.be/index.php?title=Table&action=edit&redlink=1) en data toevoegt met betreffende data (maak gebruikt van andere kol in tabel). b. Wat is probleem met zo'n manier van data toevoegen? c. Create view van twee tabellen zonder joins te gebruiken.
+ a. alter table boetes
+add column prijs varchar(50)
+update boetes
+set prijs= '€ ' || cast(bedrag as varchar(20))
+
+b. de nieuw gemaakte kolom veranderd niet mee van prijs als kolom bedrag veranderd.
+
+c. niet gevonden.
 
 \2. Update table(in_uitgave) wanner een uitgave wordt gedaan door 'Griet' (van eigenaar) naar inkomen. 
 a. Geef bericht "This is normal.... bla bla....., bug fixed" wanner update gedaan is. 
